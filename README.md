@@ -133,7 +133,6 @@ CREATE DATABASE gobus;
 
 ## Key Highlights
 
-- Schema is normalized up to 3NF
 - 13 ENUM types are used to control valid values for status fields
 - Composite primary keys are used in TRIP, ROUTE_STATION, TRAVELS_ON and TRIP_STAFF
 - Foreign key constraints use ON UPDATE CASCADE and ON DELETE RESTRICT or CASCADE based on relationship
