@@ -100,7 +100,6 @@ The database has 15 tables organized into 4 groups.
 - Display for every trip the bus registration number, route name, departure time, total seats, booked seats and available seats
 - Compare performance of all operators showing total buses, total trips, total revenue and total passengers
 - Find users who were referred by someone and have spent more than the person who referred them
-- Display route wise report showing total trips, total passengers and total revenue
 - Find users whose total spending is more than the average spending of all users
 - Find all routes for which no ticket has ever been booked
 - Find passengers who have travelled on more than one route
