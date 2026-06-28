@@ -165,15 +165,15 @@ Prerequisites: PostgreSQL 15 or above and pgAdmin 4 must be installed.
 CREATE DATABASE gobus;
 ```
 
-2. Open the query tool and run schema/DDL_script.sql to create all tables, enums, constraints and indexes
+2. Open the query tool and run schema/DDL_script.sql to create all tables, enums, constraints.
 
 3. Run data/seed_data.sql to insert sample data. Note that identity columns require OVERRIDING SYSTEM VALUE during insert
 
-4. Run each trigger file inside the triggers folder one by one in order from T1 to T12. Each file contains the trigger function and the trigger itself
+4. Run each trigger file inside the triggers folder one by one in order from T1 to T11. Each file contains the trigger function and the trigger itself
 
 5. Run each view file inside the views folder. Views can be run in any order
 
-6. Open queries/queries.sql or hard_queries.sql and run any query to see results
+6. Open queries/queries.sql and run any query to see results
 
 ---
 
