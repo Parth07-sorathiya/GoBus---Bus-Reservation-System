@@ -561,24 +561,3 @@ CREATE TABLE cancellation
         CHECK (refund_amount >= 0)
 );
 
--- -----------------------------------------------
--- INDEXES
--- -----------------------------------------------
-
-CREATE INDEX idx_bus_operator
-ON bus(operator_id);
-
-CREATE INDEX idx_booking_user
-ON booking(user_id);
-
-CREATE INDEX idx_ticket_trip
-ON ticket(bus_id, route_id, departure_date_time);
-
-CREATE INDEX idx_travels_on_seat
-ON travels_on(bus_id, seat_no);
-
-CREATE INDEX idx_route_station_station
-ON route_station(station_id);
-
-CREATE INDEX idx_trip_staff_staff
-ON trip_staff(staff_id);
