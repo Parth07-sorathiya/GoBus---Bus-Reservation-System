@@ -150,7 +150,7 @@ GoBus-Reservation-System/
 |
 |-- queries/
 |   |-- queries.sql
-|   `-- hard_queries.sql
+|  
 |
 
 ```
