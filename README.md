@@ -88,7 +88,7 @@ The database has 15 tables organized into 4 groups.
 - booking_summary_view - shows complete booking information per user including payment method, payment status, ticket PNR, ticket status, route name and trip details
 - passenger_travel_history_view - shows full travel history of every passenger including which route they travelled, which bus, which seat, how much fare they paid and the trip status
 - bus_utilization_view - shows each bus with total trips done, total passengers carried, total seats available and occupancy percentage across all trips
-- driver_schedule_view - shows every staff member with their assigned trips, bus details, route name, source and destination station, trip timings and total duration in hours
+- staff_schedule_view - shows every staff member with their assigned trips, bus details, route name, source and destination station, trip timings and total duration in hours
 
 ---
 
@@ -146,7 +146,7 @@ GoBus-Reservation-System/
 |   |-- V2_booking_summary.sql
 |   |-- V3_passenger_travel_history.sql
 |   |-- V6_bus_utilization.sql
-|   `-- V7_driver_schedule.sql
+|   `-- V7_staff_schedule.sql
 |
 |-- queries/
 |   |-- queries.sql
