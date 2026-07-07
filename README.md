@@ -110,12 +110,9 @@ The database has 15 tables organized into 4 groups.
 - Find routes where total fare from ADULT passengers is more than fare from non-adult passengers
 
 ---
----
----
----
 
 ## Author
 
 **Parth sorathiya**
-GitHub: https://github.com/Parth07-sorathiya
+Linkedin : https://www.linkedin.com/in/parth-sorathiya-a92ab0324/
 
