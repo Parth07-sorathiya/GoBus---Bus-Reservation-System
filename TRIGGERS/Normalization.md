@@ -1,4 +1,9 @@
 
+# Database Normalization
+
+Database normalization is the process of organizing relations to reduce redundancy, eliminate anomalies, and improve data integrity.
+
+---
 # Functional Dependencies
 
 Functional Dependency (FD) is a relationship between attributes in a relation where the value of one attribute (or a set of attributes) uniquely determines the value of another attribute (or set of attributes). Functional dependencies play a crucial role in identifying candidate keys and performing database normalization.
@@ -35,7 +40,9 @@ User_ID → User_Name,
           Contact_No,
           Referred_By
 ```
-
+### BCNF Verification 
+Since every determinant is a candidate key, the relation satisfies the requirements of Boyce–Codd Normal Form (BCNF).
+ 
 ---
 
 ## 2. OPERATOR
@@ -70,9 +77,10 @@ Operator_ID → Operator_Name,
               City,
               Pincode
 ```
+### BCNF Verification 
+Since every determinant is a candidate key, the relation satisfies the requirements of Boyce–Codd Normal Form (BCNF).
 
 ---
-
 ## 3. BUS
 
 ### Relation
@@ -113,10 +121,10 @@ Reg_No → Bus_ID,
          Bus_Type,
          Bus_Status
 ```
+### BCNF Verification 
+Since every determinant is a candidate key, the relation satisfies the requirements of Boyce–Codd Normal Form (BCNF).
 
 ---
-
-
 ## 4. SEAT
 
 ### Relation
@@ -141,9 +149,10 @@ SEAT(
 ```text
 (Bus_ID, Seat_No) → Seat_Type
 ```
+### BCNF Verification 
+Since every determinant is a candidate key, the relation satisfies the requirements of Boyce–Codd Normal Form (BCNF).
 
 ---
-
 ## 5. STATION
 
 ### Relation
@@ -172,9 +181,10 @@ Station_ID → Station_Name,
              City,
              Pincode
 ```
+### BCNF Verification 
+Since every determinant is a candidate key, the relation satisfies the requirements of Boyce–Codd Normal Form (BCNF).
 
 ---
-
 ## 6. ROUTE
 
 ### Relation
@@ -197,9 +207,10 @@ Route_ID
 ```text
 Route_ID → Route_Name
 ```
+### BCNF Verification 
+Since every determinant is a candidate key, the relation satisfies the requirements of Boyce–Codd Normal Form (BCNF).
 
 ---
-
 ## 7. ROUTE_STATION
 
 ### Relation
@@ -239,7 +250,11 @@ ROUTE_STATION(
           Duration_From_Source
 ```
 
-> **Note:** The second functional dependency assumes that the stop number is unique within a route. This is a valid assumption for the GoBus system, as each station occupies a unique stop position in a particular route.
+> **Note:** The second functional dependency assumes that the stop number is unique within a route. This is a valid assumption as each station occupies a unique stop position in a particular route.
+
+
+### BCNF Verification 
+Since every determinant is a candidate key, the relation satisfies the requirements of Boyce–Codd Normal Form (BCNF).
 
 ---
 ## 8. TRIP
@@ -269,9 +284,10 @@ TRIP(
         → Arrival_Date_Time,
           Trip_Status
 ```
+### BCNF Verification 
+Since every determinant is a candidate key, the relation satisfies the requirements of Boyce–Codd Normal Form (BCNF).
 
 ---
-
 ## 9. STAFF
 
 ### Relation
@@ -303,8 +319,10 @@ Staff_ID → Name,
            Staff_Status
 
 ```
----
+### BCNF Verification 
+Since every determinant is a candidate key, the relation satisfies the requirements of Boyce–Codd Normal Form (BCNF).
 
+---
 ## 10. TRIP_STAFF
 
 ### Relation
@@ -333,8 +351,10 @@ TRIP_STAFF(
 
 > **Note:** This relation is a junction (associative) table used to assign staff members to trips. Since it contains only key attributes and no non-key attributes, it has no non-trivial functional dependencies.
 
----
+### BCNF Verification 
+Since every determinant is a candidate key, the relation satisfies the requirements of Boyce–Codd Normal Form (BCNF).
 
+---
 ## 11. BOOKING
 
 ### Relation
@@ -365,6 +385,8 @@ Booking_ID → User_ID,
              Total_Amount,
              Discount_Amount
 ```
+### BCNF Verification 
+Since every determinant is a candidate key, the relation satisfies the requirements of Boyce–Codd Normal Form (BCNF).
 
 ---
 ## 12. PAYMENT
@@ -416,6 +438,9 @@ Transaction_ID → Payment_ID,
 
 > **Note:** `Transaction_ID` is considered an alternate candidate key because every payment transaction is assigned a unique transaction identifier by the payment gateway, and it is mandatory (NOT NULL) for every payment record.
 
+### BCNF Verification 
+Since every determinant is a candidate key, the relation satisfies the requirements of Boyce–Codd Normal Form (BCNF).
+
 ---
 
 ## 13. TICKET
@@ -450,9 +475,10 @@ PNR → Booking_ID,
       Ticket_Status,
       Issue_Date_Time
 ```
+### BCNF Verification 
+Since every determinant is a candidate key, the relation satisfies the requirements of Boyce–Codd Normal Form (BCNF).
 
 ---
-
 ## 14. PASSENGER
 
 ### Relation
@@ -485,6 +511,8 @@ Passenger_ID → Name,
                Passenger_Type,
                Is_Active
 ```
+### BCNF Verification 
+Since every determinant is a candidate key, the relation satisfies the requirements of Boyce–Codd Normal Form (BCNF).
 
 ---
 
@@ -517,6 +545,8 @@ TRAVELS_ON(
           Passenger_Fare
 
 ```
+### BCNF Verification 
+Since every determinant is a candidate key, the relation satisfies the requirements of Boyce–Codd Normal Form (BCNF).
 
 ---
 ## 16. CANCELLATION
@@ -553,7 +583,15 @@ Cancellation_ID → Booking_ID,
                   Cancelled_By,
                   Cancellation_Policy
 ```
+### BCNF Verification 
+Since every determinant is a candidate key, the relation satisfies the requirements of Boyce–Codd Normal Form (BCNF).
 
+---
+##  Conclusion
+
+Each relation in the database was analyzed using its corresponding functional dependencies and candidate keys. For every non-trivial functional dependency, the determinant was verified to be either a primary key or an alternate candidate key. Therefore, every relation satisfies the requirements of Boyce–Codd Normal Form (BCNF).
+
+Since every relation is in BCNF, the entire GoBus database schema automatically satisfies Third Normal Form (3NF), Second Normal Form (2NF), and First Normal Form (1NF). Hence, the database schema is fully normalized, free from partial and transitive dependencies, minimizes redundancy, and does not require any further decomposition.
 
 
 
